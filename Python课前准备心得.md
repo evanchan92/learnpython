@@ -29,7 +29,7 @@
 - 使用降噪耳机，隔绝外界噪音
 
 ### 教6个月前的自己使用Git：
-其实我也不懂Git语法是什么。。。我尝试自学一下再教自己：
+其实我也不懂Git是什么。。。我尝试自学一下再教自己：
 
 1. 利用官方文档和Wikipedia，了解SSH是什么，怎么用：https://help.github.com/articles/connecting-to-github-with-ssh/
 * SSH最小定义：Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.[1] The best known example application is for remote login to computer systems by users.
@@ -40,15 +40,16 @@
 
 2. Git 是啥？  查阅官方术语词典：
 Git is an open source program for tracking changes in text files. It was written by the author of the Linux operating system, and is the core technology that GitHub, the social and user interface, is built on top of.
-明确了Git是一种语言方法之后，在Github中搜索 “Git terminal edit”，紧跟问题。
+明确了Git是一种分布式版本管理方法之后，在Github中搜索 “Git terminal edit”，紧跟问题。
 
 3. 找到官方手册关于在本地运行Git的部分： 
 https://help.github.com/articles/set-up-git/#setting-up-git
 
-  1.安装Git：
+  1.安装Git：在google上找到git下载安装
 
 
-  2. Git PUSH:  Push file from local repository to on-line repository
+  2. Git add/ commit/ push:  添加/ 修改/ 推送到云端
+    Push file from local repository to on-line repository
     * https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
       0. open terminal
       1. git init
@@ -58,16 +59,12 @@ https://help.github.com/articles/set-up-git/#setting-up-git
       5. git remote -v
       6. git push -u origin master
  
-  3. Git PULL: Fetch from and integrate with another repository or a local branch. Incorporates changes from a remote repository into the current branch. In its default mode, git pull is shorthand for git fetch followed by git merge FETCH_HEAD.
+  3. Git PULL: 在云端编辑完成后，利用git pull将修改的内容拉取到本地仓库。
+      Fetch from and integrate with another repository or a local branch. Incorporates changes from a remote repository into the current branch. In its default mode, git pull is shorthand for git fetch followed by git merge FETCH_HEAD.
       * https://git-scm.com/docs/git-pull    * git pull [options] [<repository> [<refspec>…​]]
       * <repository> should be the name of a remote repository as passed to git-fetch[1]. <refspec> can name an arbitrary remote ref (for example, the name of a tag) or even a collection of refs with corresponding remote-tracking branches (e.g., refs/heads/*:refs/remotes/origin/*), but usually it is the name of a branch in the remote repository.
-      0. open terminal
-      1. 
-
-
-
-
-
-
-
-2. 
+     
+  4. Git Merge: 将Branch与master进行合并。
+  具体用法研究中
+  
+  ...........................................
