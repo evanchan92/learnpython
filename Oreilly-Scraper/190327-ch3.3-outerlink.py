@@ -23,6 +23,3 @@ def getInternalLinks(bsObj,includeUrl):
 
 
 def getExternalLinks
-
-
-# sdfjlksdjflkj
