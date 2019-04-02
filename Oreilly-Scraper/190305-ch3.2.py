@@ -1,30 +1,17 @@
-"""
-Get all links within 1 website
-Be careful about the redundant links.
-目标:把老阳博客里面所有打 psy 标签的博文找出来
-"""
-
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+import datetime
+import random
 import re
 
-pages = set()
-def getLinks(pageUrl):
-    global pages
-    html = urlopen("https://www.yangzhiping.com"+pageUrl)
+random.seed(datetime.datetime.now())
+def getLinks(articleUrl):
+    html = urlopen("http://en.wikipedia.org"+articleUrl)
     bsObj = BeautifulSoup(html)
-    try:
-        print(bsObj.findAll("a",href = re.compile("^(/psy)")))
+    return bsObj.find("div",{"id":"bodyContent"}).findAll("a",href=re.compile("^(/wiki/)((?!:).)*$"))
 
-    except AttributeError:
-        print("No worries")
-
-    for link in bsObj.findAll("a",href=re.compile("(/psy/)")):
-        if 'href' in link.attrs:
-            if link.attrs['href'] not in pages:
-                newPage = link.attrs['href']
-                print(newPage)
-                pages.add(newPage)
-                getLinks(newPage)
-
-getLinks("")
+links = getLinks("/wiki/Kevin_Bacon")
+while len(links) > 0:
+    newArticle = links[random.randint(0,len(links)-1)].attrs["href"]
+    print(newArticle)
+    links = getLinks(newArticle)
